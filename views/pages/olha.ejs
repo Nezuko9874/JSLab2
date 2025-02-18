@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/site.css">
+    <title>Our team</title>
+</head>
+<body>
+    <div class="header">
+        <h1>Our team</h1>
+    </div>
+
+    <div class="main">
+        <div class="menu">
+            <ul>
+                <li><a href="/">Меню</a></li>
+                <li><a href="/charnosh">Чарнош Надія</a></li>
+                <li><a href="/hryshchenko">Грищенко Олена</a></li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <div class="img">
+                <div class="img1">
+                    <img src="./img/img1.jpg" alt="photo">
+                    <img src="./img/img2.jpg" alt="photo">
+                </div>
+                <div class="img2">
+                    <img src="https://i.pinimg.com/736x/f8/15/99/f81599c68d3d77884ce5284a3c84cda6.jpg" alt="photo">
+                </div>
+            </div>
+
+            <div class="text">
+
+                <div class="part1">
+                <h3><%= user.last_name %> <%= user.name %></h3>
+                <h3>Вік: <%= user.age %></h3>
+                <h3>Домашні тварини: <%= user.pet %></h3>
+                <h3>Місто: <%= user.city %></h3>
+                <h3>Країна: <%= user.country %></h3>
+
+                <h3>Хобі:</h3>
+                <ul>
+                    <% user.hobbies.forEach(hobby => { %>
+                        <li><%= hobby %></li>
+                    <% }) %>
+                </ul>
+            </div>
+                  <div class="part">
+                <h3>Улюблені книги:</h3>
+                <ul>
+                    <% user.books.forEach(book => { %>
+                        <li><%= book %></li>
+                    <% }) %>
+                </ul>
+
+                <h3>Спорт:</h3>
+                <ul>
+                    <% user.sport.forEach(type => { %>
+                        <li><%= type %></li>
+                    <% }) %>
+                </ul>
+
+                <h3>Професійні навички:</h3>
+                <ul>
+                    <% user.languages.forEach(language => { %>
+                        <li><%= language %></li>
+                    <% }) %>
+                </ul>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <h2>Проєкт був виконаний студентками групи ІП-35</h2>
+    </div>
+</body>
+</html>

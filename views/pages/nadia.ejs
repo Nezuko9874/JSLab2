@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/site.css">
+    <title>Our team</title>
+</head>
+<body>
+    <div class="header">
+        <h1>Our team</h1>
+    </div>
+
+    <div class="main">
+        <div class="menu">
+            <ul>
+                <li><a href="/">Меню</a></li>
+                <li><a href = "/bendik" >Бендік Ольга</a></li>
+                <li><a href="/hryshchenko">Грищенко Олена</a></li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <div class="img">
+                <div class="img1">
+                    <img src="https://i.pinimg.com/736x/49/59/2c/49592c90e955ac17dd2570f5f6becff6.jpg" alt="photo">
+                    <img src="https://zprz.city/uploads/news/resize/w/1200x1200/c51n1jyiaqgs1zgizf36qw2b1pyn1kge.jpg" alt="photo">
+                </div>
+                <div class="img2">
+                    <img src="https://i.pinimg.com/736x/f4/fc/5c/f4fc5cff14143a1c91b0a254bba7bcf2.jpg" alt="photo">
+                </div>
+            </div>
+            <div class="text">
+                <div class="part1">
+                    <h3><%= user.last_name %> <%= user.name %></h3>
+                    <h3>Вік: <%= user.age %></h3>
+                    <h3>Поточне місто: <%= user.city_naw %></h3>
+                    <h3>Рідне місто: <%= user.best_city %></h3>
+                    <h3>Країна: <%= user.country %></h3>
+                </div>
+                <div class="part">
+                    <h3>Улюблені фільми:</h3>
+                    <ul>
+                        <% user.films.forEach(film => { %>
+                            <li><%= film %></li>
+                        <% }) %>
+                    </ul>
+
+                    <h3>Професійні навички:</h3>
+                    <ul>
+                        <% user.languages.forEach(language => { %>
+                            <li><%= language %></li>
+                        <% }) %>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <h2>Проєкт був виконаний студентками групи ІП-35</h2>
+    </div>
+</body>
+</html>
